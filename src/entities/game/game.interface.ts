@@ -1,3 +1,5 @@
+import { IBet } from '../bet/bet.interface';
+
 export interface IGame {
   id: string;
   type: string;
@@ -7,4 +9,5 @@ export interface IGame {
   max_number: number;
   color: string;
   min_cart_value: number;
+  bets: IBet[];
 }

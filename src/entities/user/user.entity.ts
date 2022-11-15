@@ -14,6 +14,6 @@ export class User extends BaseEntity<User> implements IUser {
   @Column()
   password: string;
 
-  @OneToMany(() => Bet, (bet) => bet.user)
+  @OneToMany(() => Bet, (bets) => bets.user)
   bets: Bet[];
 }
