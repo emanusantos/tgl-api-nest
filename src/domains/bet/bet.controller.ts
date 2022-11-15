@@ -8,12 +8,15 @@ import {
   Post,
   Query,
   Request,
+  UseGuards,
 } from '@nestjs/common';
+import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { BetService } from './bet.service';
 import { CreateBetDto } from './dto/create-bet.dto';
 import { FindBetDto } from './dto/find-bet.dto';
 
 @Controller('bet')
+@UseGuards(JwtAuthGuard)
 export class BetController {
   constructor(private readonly betService: BetService) {}
 
@@ -23,8 +26,8 @@ export class BetController {
   }
 
   @Get()
-  async find(@Query() findBetDto: FindBetDto, @Request() req) {
-    return this.betService.find(findBetDto, req.userId);
+  async find(@Query() findBetDto: FindBetDto) {
+    return this.betService.find(findBetDto);
   }
 
   @Get(':id')

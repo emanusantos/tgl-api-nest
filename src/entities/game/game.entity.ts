@@ -5,7 +5,7 @@ import { IGame } from './game.interface';
 
 @Entity()
 export class Game extends BaseEntity<Game> implements IGame {
-  @Column()
+  @Column({ unique: true })
   type: string;
 
   @Column()

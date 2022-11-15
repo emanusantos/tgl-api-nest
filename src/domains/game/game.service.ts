@@ -13,7 +13,7 @@ export class GameService {
   async create(dto: CreateGameDto) {
     const game = new Game(dto);
 
-    await this.gameRepository.save(game);
+    return this.gameRepository.save(game);
   }
 
   async find() {

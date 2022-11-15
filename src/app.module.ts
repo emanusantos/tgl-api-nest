@@ -3,6 +3,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { JwtConfigModule } from './config/jwt/jwt.module';
 import { AuthModule } from './domains/auth/auth.module';
+import { BetModule } from './domains/bet/bet.module';
 import { GameModule } from './domains/game/game.module';
 import { UserModule } from './domains/user/user.module';
 import entities from './entities';
@@ -28,6 +29,7 @@ import entities from './entities';
     AuthModule,
     UserModule,
     GameModule,
+    BetModule,
   ],
   providers: [],
 })
