@@ -1,5 +1,6 @@
-import { Column, Entity } from 'typeorm';
+import { Column, Entity, OneToMany } from 'typeorm';
 import { BaseEntity } from '../base-entity';
+import { Bet } from '../bet/bet.entity';
 import { IUser } from './user.interface';
 
 @Entity()
@@ -12,4 +13,7 @@ export class User extends BaseEntity<User> implements IUser {
 
   @Column()
   password: string;
+
+  @OneToMany(() => Bet, (bet) => bet.user)
+  bets: Bet[];
 }
