@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Bet } from 'src/entities';
-import { FindOptionsWhere, Repository } from 'typeorm';
+import { Repository } from 'typeorm';
 import { GameService } from '../game/game.service';
 import { UserService } from '../user/user.service';
 import { CreateBetDto } from './dto/create-bet.dto';
